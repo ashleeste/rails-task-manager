@@ -1,0 +1,17 @@
+<h1>To Do List</h1>
+<ul>
+  <% @tasks.each do |task| %>
+  <li>
+    <%= link_to task_path(task) do %>
+    <h2> <%=task.name.capitalize%> | <%=task.description%></h2>
+  <% end %>
+  <%= link_to "Update ", edit_task_path(task) %>
+  <%=link_to "Delete", task_path(task), method: "delete" %>
+  </li>
+  <% end %>
+</ul>
+
+
+
+
+<!-- Display: list of all tasks, for each task: link to show view, link to edit view, link to delete action(method: :delete) after delete should include link to new view -->
